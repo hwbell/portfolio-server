@@ -44,8 +44,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`)
-});
+// dont need this because it is taken care of in ./bin/www ... I think ...
+// app.listen(port, () => {
+//   console.log(`Server listening on port ${port}`)
+// });
 
 module.exports = app;
