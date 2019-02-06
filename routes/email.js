@@ -4,16 +4,17 @@ const nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
+  requireTLS: true,
   auth: {
     user: 'famri.improve.emailer@gmail.com',
-    pass: process.env.gPass
+    pass: 'Efferocytosis'//process.env.gPass
   }
 })
 
 /* GET users listing. */
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
   console.log('Handling post request')
   console.log(`Request Body: ${req.body.contact}`);
 
