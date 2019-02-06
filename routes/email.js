@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
   console.log(`Request Body: ${req.body.contact}`);
 
   var mailOptions = {
-    from: 'famri.improve.emailer.com',
+    from: 'famri.improve.emailer@gmail.com',
     to: 'harold.william.bell@gmail.com',
     subject: `New Contact: ${req.body.name}`,
     text: `Hi, my name is ${req.body.name}. ${req.body.message} My email is ${req.body.email}`
