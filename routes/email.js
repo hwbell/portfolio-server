@@ -9,7 +9,7 @@ var transporter = nodemailer.createTransport({
   requireTLS: true,
   auth: {
     user: 'famri.improve.emailer@gmail.com',
-    pass: 'Efferocytosis'//process.env.gPass
+    pass: process.env.gPass
   }
 })
 
