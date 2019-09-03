@@ -1,17 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
-var transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+var transporter = nodemailer.createTransport(smtpTransport({
+  host: 'gmail.com',
   port: 587,
-  secure: false,
-  requireTLS: true,
   auth: {
     user: 'harry.email.router@gmail.com',
     pass: process.env.gPass
   }
-})
+}));
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
