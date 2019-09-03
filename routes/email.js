@@ -1,17 +1,26 @@
 var express = require('express');
 var router = express.Router();
 const nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
 
+var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport(smtpTransport({
-  host: 'gmail.com',
+  service: 'gmail.com',
   port: 587,
-  secure: false,
+  // secure: false,
+  // requireTLS: true,
   auth: {
     user: 'harry.email.router@gmail.com',
     pass: process.env.gPass
   }
 }));
+
+// var transport = nodemailer.createTransport(smtpTransport({
+//   service: 'gmail',
+//   auth: {
+//       user: 'myemail@gmail.com', // my mail
+//       pass: 'mypassword'
+//   }
+// }));
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
